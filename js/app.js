@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", seleccionarTodo);
 
 async function seleccionarTodo() {
     try {
-        const respuesta = await fetch("../api/seleccionarTodo.php");
+        const respuesta = await fetch(`${API_URL}/seleccionarTodo.php`);
         const resultado = await respuesta.json();
 
         tabla.innerHTML = "";
@@ -106,7 +106,7 @@ async function seleccionarTodo() {
 
 async function seleccionarUno(id) {
     try {
-        const respuesta = await fetch(`../api/seleccionar.php?id=${id}`);
+        const respuesta = await fetch(`${API_URL}/seleccionar.php?id=${id}`);
         const resultado = await respuesta.json();
 
         if (resultado.status === "success") {
@@ -144,7 +144,7 @@ form.addEventListener("submit", async (e) => {
         stock: parseInt(inputStock.value, 10)
     };
 
-    const endpoint = id ? "../api/actualizar.php" : "../api/agregar.php";
+    const endpoint = id ? `${API_URL}/actualizar.php` : `${API_URL}/agregar.php`;
 
     try {
         const respuesta = await fetch(endpoint, {
@@ -188,7 +188,7 @@ async function eliminarRegistro(id) {
 
     if (confirmacion.isConfirmed) {
         try {
-            const respuesta = await fetch("../api/eliminar.php", {
+            const respuesta = await fetch(`${API_URL}/eliminar.php`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ id: id })
