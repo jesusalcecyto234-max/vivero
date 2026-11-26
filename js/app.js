@@ -1,4 +1,4 @@
-const API_URL = "http://vivero.atwebpages.com/api";
+const API_URL = "https://vivero.atwebpages.com/api";
 const form = document.getElementById("form-planta");
 const tabla = document.getElementById("tabla-plantas");
 const totalPlantas = document.getElementById("total-plantas");
