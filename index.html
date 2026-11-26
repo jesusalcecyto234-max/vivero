@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivero — Inventario de Plantas</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="barra-superior">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <div>
+                <h1>Vivero "El Semillero"</h1>
+                <p>Registro y control de plantas en existencia</p>
+            </div>
+            <span class="contador-plantas" id="total-plantas">0 plantas</span>
+        </div>
+    </header>
+
+    <main class="container pb-5">
+        <div class="row g-4 align-items-start">
+            <!-- Formulario -->
+            <div class="col-lg-4">
+                <section class="panel-card">
+                    <div class="panel-header" id="titulo-formulario">Nueva planta</div>
+                    <div class="panel-body">
+                        <form id="form-planta">
+                            <input type="hidden" id="planta-id">
+
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Ej. Romero" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="tipo" class="form-label">Tipo</label>
+                                <select class="form-select" id="tipo" required>
+                                    <option value="">Elige una opción</option>
+                                    <option value="Aromática">Aromática</option>
+                                    <option value="Suculenta">Suculenta</option>
+                                    <option value="Ornamental">Ornamental</option>
+                                    <option value="Frutal">Frutal</option>
+                                    <option value="Medicinal">Medicinal</option>
+                                </select>
+                            </div>
+
+                            <div class="row g-2 mb-4">
+                                <div class="col-6">
+                                    <label for="precio" class="form-label">Precio ($)</label>
+                                    <input type="number" step="0.01" min="0" class="form-control" id="precio" placeholder="0.00" required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="stock" class="form-label">Stock</label>
+                                    <input type="number" min="0" class="form-control" id="stock" placeholder="0" required>
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-verde d-inline-flex align-items-center justify-content-center gap-2" id="btn-guardar">
+                                    <span id="icono-guardar">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                                            <polyline points="7 3 7 8 15 8"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span id="texto-guardar">Guardar</span>
+                                </button>
+                                <button type="button" class="btn btn-light border d-none d-inline-flex align-items-center justify-content-center gap-2" id="btn-cancelar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    <span>Cancelar</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Tabla -->
+            <div class="col-lg-8">
+                <section class="panel-card">
+                    <div class="panel-header">Catálogo de plantas</div>
+                    <div class="table-responsive">
+                        <table class="tabla-vivero">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Tipo</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th class="text-end">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-plantas"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

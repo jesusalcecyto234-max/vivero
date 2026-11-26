@@ -1,0 +1,195 @@
+:root {
+    --verde-principal: #23643d;
+    --verde-oscuro: #18472b;
+    --verde-suave: #e9f3ed;
+    --fondo-pagina: #f5f7f5;
+    --borde-suave: #dce5df;
+    --texto-oscuro: #1e2923;
+    --texto-gris: #5f6f65;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--fondo-pagina);
+    color: var(--texto-oscuro);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.barra-superior {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--borde-suave);
+    padding: 1.25rem 0;
+    margin-bottom: 2rem;
+}
+
+.barra-superior h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    margin: 0;
+}
+
+.barra-superior p {
+    color: var(--texto-gris);
+    font-size: 0.92rem;
+    margin: 0.2rem 0 0;
+}
+
+.contador-plantas {
+    background-color: var(--verde-suave);
+    color: var(--verde-oscuro);
+    border: 1px solid #c6ddd0;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 50px;
+}
+
+.panel-card {
+    background-color: #ffffff;
+    border: 1px solid var(--borde-suave);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(24, 71, 43, 0.04);
+}
+
+.panel-header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--borde-suave);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--verde-oscuro);
+    background-color: #fafcfb;
+    border-radius: 12px 12px 0 0;
+}
+
+.panel-body {
+    padding: 1.25rem;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.86rem;
+    color: var(--texto-oscuro);
+    margin-bottom: 0.35rem;
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border: 1px solid #cbd7d0;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.93rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 0 3px rgba(35, 100, 61, 0.14);
+}
+
+.btn-verde {
+    background-color: var(--verde-principal);
+    border-color: var(--verde-principal);
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+}
+
+.btn-verde:hover,
+.btn-verde:focus {
+    background-color: var(--verde-oscuro);
+    border-color: var(--verde-oscuro);
+    color: #ffffff;
+}
+
+.btn-naranja {
+    background-color: #d97706;
+    border-color: #d97706;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+}
+
+.btn-naranja:hover,
+.btn-naranja:focus {
+    background-color: #b45309;
+    border-color: #b45309;
+    color: #ffffff;
+}
+
+.tabla-vivero {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-vivero thead th {
+    background-color: var(--verde-suave);
+    color: var(--verde-oscuro);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--borde-suave);
+    white-space: nowrap;
+}
+
+.tabla-vivero tbody td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #edf2ef;
+    font-size: 0.92rem;
+    vertical-align: middle;
+}
+
+.tabla-vivero tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-vivero tbody tr:hover {
+    background-color: #f7faf8;
+}
+
+.etiqueta-tipo {
+    display: inline-block;
+    background-color: var(--verde-suave);
+    color: var(--verde-oscuro);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+}
+
+.precio-texto {
+    font-weight: 600;
+    color: var(--texto-oscuro);
+}
+
+.stock-sin {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.stock-poco {
+    color: #d97706;
+    font-weight: 600;
+}
+
+.btn-accion {
+    border-radius: 6px;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.btn-accion svg,
+.btn-verde svg,
+.btn-naranja svg,
+#btn-cancelar svg {
+    flex-shrink: 0;
+}
